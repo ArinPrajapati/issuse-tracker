@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Issue Tracker</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js"
+      integrity="sha384-H5SrcfygHmAuTDZphMHqBJLc3FhssKjG7w/CeCpFReSfwBWDTKpkzPP8c+cLsK+V"
+      crossorigin="anonymous"
+    ></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="w-dvw h-dvh">
+      <div class="w-full h-[10%] text-center">
+        nav
+        <div x-data="{ open: false }">
+          <button @click="open = !open">Add Issue</button>
+
+          <div
+            x-show="open"
+            class="absolute left-1/2 top-[240px] w-[20rem] -translate-x-1/2 border p-4"
+          >
+            <div class="flex flex-col gap-3">
+              <span>#444</span>
+
+              <input placeholder="add issues" class="border px-2 py-1" />
+
+              <select class="w-full border px-2 py-1">
+                <option value="">--Please choose an option--</option>
+                <option value="Project1">Project 1</option>
+                <option value="Project2">Project 2</option>
+                <option value="Project3">Project 3</option>
+              </select>
+
+              <button @click="open = false" class="self-end border px-3 py-1">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-row w-full h-[90%]">
+        <div class="h-full w-1/4 text-center border border-1">side</div>
+        <div class="h-full w-3/4 text-center border-1">main</div>
+      </div>
+    </div>
+  </body>
+</html>
